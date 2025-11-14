@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="<%= site.locale %>" class="wa-theme-glossy wa-palette-elegant wa-brand-indigo wa-cloak">
+
+  <head>
+    <%= render "head", metadata: site.metadata, title: data.title %>
+    <link rel="stylesheet" href="/webawesome/dist/styles/webawesome.css">
+    <script type="module" src="/webawesome/dist/webawesome.loader.js" data-webawesome="/webawesome/dist"></script>    <script src="https://kit.fontawesome.com/dc8a27351f.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body class="<%= data.layout %> <%= data.page_class %>">
+
+    <wa-page class="wa-system">
+
+      <header slot="header">
+        <div class="wa-cluster">
+          <a href="/"><i class="fa-notdog-duo fa-solid fa-ban fa-2xl" style="--fa-primary-color: #74C0FC; --fa-secondary-color: #74C0FC;"></i></a>
+          <a href="/" style="color: inherit; text-decoration: none;"><span class="wa-heading-xl">tl;dr</span></a>
+        </div>
+      </header>
+
+      <nav slot="navigation">
+        <%= render Shared::Navbar.new(metadata: site.metadata, resource: resource) %>
+      </nav>
+
+      <main>
+        <%= yield %>
+      </main>
+
+      <footer slot="footer">
+        <%= render "footer", metadata: site.metadata %>
+      </footer>
+
+    </wa-page>
+  </body>
+</html>
