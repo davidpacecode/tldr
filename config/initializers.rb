@@ -102,4 +102,14 @@ Bridgetown.configure do |config|
 
   # For more documentation on how to configure your site using this initializers file,
   # visit: https://edge.bridgetownrb.com/docs/configuration/initializers/
+
+  collections_dir "my_collections"
+
+  collections do
+    tldrs do
+      output true
+      permalink "pretty"
+      future true
+    end
+  end
 end

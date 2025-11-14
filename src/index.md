@@ -9,4 +9,7 @@ layout: default
 This is where the tl;drs will go....
 
 
-
+<% collections.tldrs.sort_by { |tldr| tldr.data.section }
+  .group_by { |tldr| tldr.data.section }.each do |section, tldr| %>
+  <%= section %>
+<% end %>
