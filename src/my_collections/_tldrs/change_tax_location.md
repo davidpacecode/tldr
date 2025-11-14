@@ -1,6 +1,6 @@
 ---
 layout: default
-section: Dining
+section: Cooking
 title: Change Tax Location
 lead_in: Tacos, toots, and (probably?) more
 sort_order: 12
