@@ -21,7 +21,7 @@ const esbuildOptions = {
     copy({
       resolveFrom: 'cwd',
       assets: {
-        from: ['./node_modules/@awesome.me/webawesome/dist/**/*'],
+        from: ['./frontend/styles/webawesome/dist/**/*'],
         to: ['./output/webawesome/dist'],
       },
       verbose: false
