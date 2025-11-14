@@ -4,8 +4,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.metadata.myvariable }}.
 
-title: tl;dr
-tagline: too long; didn't read
+title: tldr
+tagline: simple instructions
 email: your-email@example.com
 description: >-
   There are many things we need to do every now and then. Not so often that we actually remember how to do them. But often enough to make it so frustrating when it's hard to do. Instructions often contain so much extraneous information and the actual line or two of relevant context is buried. Or, the simple link is hard to find. tl;dr intends to fix this...

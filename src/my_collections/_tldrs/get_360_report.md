@@ -1,6 +1,5 @@
 ---
-layout: default
-section: Dining
+layout: tldr
 title: Get 360 Report
 lead_in: Tacos, toots, and (probably?) more
 sort_order: 12
@@ -11,3 +10,5 @@ alt_text: Taco Deli
 ---
 
 What a great tldr I am!
+
+enjoy that 360!
