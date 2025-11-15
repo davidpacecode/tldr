@@ -9,6 +9,9 @@ import "./webawesome/dist/components/page/page.js";
 import "./webawesome/dist/components/tree/tree.js";
 import "./webawesome/dist/components/tree-item/tree-item.js";
 
+// Import HTMX
+import "./htmx.min.js"
+
 // Import all JavaScript & CSS files from src/_components
 import components from "$components/**/*.{js,jsx,js.rb,css}"
 

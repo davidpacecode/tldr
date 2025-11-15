@@ -5,3 +5,15 @@ layout: default
 <h1><%= data.title %></h1>
 
 <%= yield %>
+
+
+<button hx-put="/upvote/<%= data.title %>"
+  hx-target="#search-results"
+  hx-swap="outerHTML">
+    Click Me!
+</button>
+
+<br />
+
+<strong>Response from Roda</strong><br />
+<div id="search-results"></div>

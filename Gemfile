@@ -28,7 +28,7 @@ git_source(:codeberg) { "https://codeberg.org/#{_1}.git" }
 gem "bridgetown", "~> 2.0.4"
 
 # Uncomment to add file-based dynamic routing to your project:
-# gem "bridgetown-routes", "~> 2.0.4"
+gem "bridgetown-routes", "~> 2.0.4"
 
 # Puma is the Rack-compatible web server used by Bridgetown
 # (you can optionally limit this to the "development" group)
@@ -40,3 +40,9 @@ gem "puma", "< 8"
 
 # Or for faster parsing of HTML-only resources via Inspectors, use Nokolexbor:
 # gem "nokolexbor", "~> 0.6"
+
+gem "dotenv", "~> 3.1"
+
+gem "sqlite3", "~> 2.8"
+
+gem "bridgetown_sequel", "~> 1.1"
