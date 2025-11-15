@@ -1,14 +1,14 @@
 ---
 layout: tldr
-title: Get 360 Report
-lead_in: Tacos, toots, and (probably?) more
+category: Workday Stuff
+title: Change Tax Location
+lead_in: Steps to update your tax location in Workday
 sort_order: 12
-tags: dining casual takeout
-url: https://www.tacodeli.com/
-image: images/taco_deli.jpg
-alt_text: Taco Deli
+tags: workday hr instructions
+submitted_by: David Pace
+featured: false
 ---
 
-What a great tldr I am! Here is your 360...
+This is how you change your tax location in Workday
 
-here is how to change your tax location
+

@@ -1,14 +1,12 @@
 ---
 layout: tldr
+category: Workday Stuff
 title: Get 360 Report
-lead_in: Tacos, toots, and (probably?) more
+lead_in: Simple steps to access your 360 report
 sort_order: 12
-tags: dining casual takeout
-url: https://www.tacodeli.com/
-image: images/taco_deli.jpg
-alt_text: Taco Deli
+tags: workday hr instructions
+submitted_by: David Pace
+featured: false
 ---
 
-What a great tldr I am!
-
-enjoy that 360!
+Enjoy that 360!

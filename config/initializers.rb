@@ -108,7 +108,7 @@ Bridgetown.configure do |config|
   collections do
     tldrs do
       output true
-      permalink "pretty"
+      permalink "simple"
       future true
     end
   end

@@ -1,0 +1,9 @@
+<% tldrs.sort_by { |tldr| tldr.data.sort_order }.each do |tldr| %>
+  <wa-tree-item>
+    <a href="<%= tldr.relative_url %>"><%= tldr.data.title %></a>
+  </wa-tree-item>
+<% end %>
+
+
+
+
