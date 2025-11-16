@@ -47,3 +47,7 @@ end
 #     say_status :rake, "I'm a Rake tast =) #{site.config.url}"
 #   end
 # end
+# Now add this:
+
+require "bridgetown_sequel"
+BridgetownSequel.load_tasks
