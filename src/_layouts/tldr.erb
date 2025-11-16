@@ -7,13 +7,33 @@ layout: default
 <%= yield %>
 
 
-<button hx-put="/upvote/<%= data.title %>"
+<button hx-put="/upvote/<%= resource.data.slug %>"
   hx-target="#search-results"
   hx-swap="outerHTML">
-    Click Me!
+  Upvote!
 </button>
 
 <br />
 
+<button hx-put="/downvote/<%= resource.data.slug %>"
+  hx-target="#search-results"
+  hx-swap="outerHTML">
+  Downvote!
+</button>
+
+<br />
+
+
 <strong>Response from Roda</strong><br />
 <div id="search-results"></div>
+
+<br />
+<div class="wa-cluster"">
+  x
+  <i class="fa-notdog fa-solid fa-thumbs-up fa-2xl" style="color: #74C0FC;"></i>
+  y
+  <i class="fa-notdog fa-solid fa-thumbs-down fa-2xl" style="color: #f61404;"></i>
+  net
+  <i class="fa-jelly fa-regular fa-face-smile fa-2xl" style="color: #74C0FC;"></i>
+  <i class="fa-jelly fa-regular fa-face-frown fa-2xl" style="color: #f21202;"></i>
+</div>

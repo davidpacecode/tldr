@@ -1,0 +1,26 @@
+---<%
+filename = params[:tldr]
+
+Feedback.select(
+  filename: filename,
+  ip_address: user_ip,
+  vote_type: "upvote",
+  created_at: Time.now,
+  updated_at: Time.now
+)
+%>---
+
+<%= "Filename = #{filename} ip_address = #{user_ip}" %>
+
+<% if false %>
+ Option 2: Using hx-vals (for dynamic data)
+
+  <button hx-put="/upvote/<%= resource.basename_without_ext %>"
+    hx-vals='{"vote_type": "upvote", "category": "<%= data.category %>"}'
+    hx-target="#search-results"
+    hx-swap="outerHTML">
+      Click Me!
+  </button>
+
+  In your route, access the same way with params[:vote_type], params[:category]
+<% end %>

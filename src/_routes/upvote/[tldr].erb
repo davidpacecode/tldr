@@ -1,6 +1,15 @@
 ---<%
-  tldr_title = params[:tldr]
+filename = params[:tldr]
+user_ip = request.ip
+
+Feedback.create(
+  filename: filename,
+  ip_address: user_ip,
+  vote_type: "upvote",
+  created_at: Time.now,
+  updated_at: Time.now
+)
 %>---
 
-<%= "#{tldr_title} has #{tldr_title.length} characters" %>
+<%= "Filename = #{filename} ip_address = #{user_ip}" %>
 
