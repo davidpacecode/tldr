@@ -1,11 +1,13 @@
 Sequel.migration do
   change do
-    create_table(:feedback, primary_key: [:filename, :ip_address]) do
+    create_table(:feedback) do
       String :filename, null: false
       String :ip_address, null: false
-      String :vote_type, null: false
+      String :vote_type
       DateTime :created_at
       DateTime :updated_at
+
+      primary_key [:filename, :ip_address]
     end
   end
 end
