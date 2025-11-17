@@ -40,3 +40,7 @@ yarn-debug.log*
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
+
+# Database files
+db/*.db
+db/*.db.backup
