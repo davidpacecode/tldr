@@ -1,5 +1,6 @@
 class Feedback < Sequel::Model(:feedback)
   set_primary_key [:filename, :ip_address]
+  plugin :update_or_create
 end
 
 # Table: feedback

@@ -3,7 +3,7 @@ Sequel.migration do
     create_table(:feedback) do
       String :filename, null: false
       String :ip_address, null: false
-      String :vote_type
+      String :vote_type, null: false
       DateTime :created_at
       DateTime :updated_at
 
