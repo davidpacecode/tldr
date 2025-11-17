@@ -3,18 +3,9 @@ filename = params[:tldr]
 user_ip = request.ip
 vote_type = params[:vote_type]
 
-Feedback.dataset.insert_conflict(
-  target: [:filename, :ip_address],
-  update: {
-    vote_type: Sequel[:excluded][:vote_type],
-    updated_at: Sequel[:excluded][:updated_at]
-  }
-).insert(
-  filename: filename,
-  ip_address: user_ip,
-  vote_type: vote_type,
-  created_at: Time.now,
-  updated_at: Time.now
+Feedback.update_or_create(
+  { filename: params[:tldr], ip_address: request.ip },
+  { vote_type: params[:vote_type], updated_at: Time.now }
 )
 %>---
 
