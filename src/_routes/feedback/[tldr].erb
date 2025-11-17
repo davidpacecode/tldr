@@ -16,7 +16,20 @@ Feedback.dataset.insert_conflict(
   created_at: Time.now,
   updated_at: Time.now
 )
+
+upvotes = Feedback.where(filename: filename, vote_type: "upvote").count
+downvotes = Feedback.where(filename: filename, vote_type: "downvote").count
 %>---
+
+<div class="wa-cluster"">
+  <%= upvotes %>
+  <i class="fa-notdog fa-solid fa-thumbs-up fa-2xl" style="color: #74C0FC;"></i>
+  <%= downvotes %>
+  <i class="fa-notdog fa-solid fa-thumbs-down fa-2xl" style="color: #f61404;"></i>
+  <%= "#{upvotes - downvotes}" %>
+  <i class="fa-jelly fa-regular fa-face-smile fa-2xl" style="color: #74C0FC;"></i>
+  <i class="fa-jelly fa-regular fa-face-frown fa-2xl" style="color: #f21202;"></i>
+</div>
 
 <%= "Filename = #{filename} ip_address = #{user_ip}" %>
 
