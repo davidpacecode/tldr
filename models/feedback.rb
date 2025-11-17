@@ -1,5 +1,5 @@
 class Feedback < Sequel::Model(:feedback)
-
+  plugin :update_or_create
 end
 
 # Table: feedback
