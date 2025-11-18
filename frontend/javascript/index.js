@@ -8,6 +8,10 @@ import "./webawesome/dist/components/spinner/spinner.js"
 import "./webawesome/dist/components/page/page.js";
 import "./webawesome/dist/components/tree/tree.js";
 import "./webawesome/dist/components/tree-item/tree-item.js";
+import "./webawesome/dist/components/textarea/textarea.js";
+import "./webawesome/dist/components/divider/divider.js";
+import "./webawesome/dist/components/card/card.js";
+import "./webawesome/dist/components/avatar/avatar.js";
 
 // Import HTMX
 import "./htmx.min.js"
