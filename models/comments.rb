@@ -1,14 +1,13 @@
 class Comments < Sequel::Model
-  set_primary_key [:filename, :ip_address]
+  set_primary_key [:id]
 end
 
 # Table: comments
-# -------------------------------------
-# Primary Key: (filename, ip_address)
+# ------------------------------------------------------
 # Columns:
-#  id         | INTEGER      |
+#  id         | INTEGER      | PRIMARY KEY AUTOINCREMENT
 #  filename   | varchar(255) | NOT NULL
 #  ip_address | varchar(255) | NOT NULL
 #  comments   | varchar(255) |
 #  created_at | timestamp    |
-# -------------------------------------
+# ------------------------------------------------------

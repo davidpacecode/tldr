@@ -12,6 +12,7 @@ import "./webawesome/dist/components/textarea/textarea.js";
 import "./webawesome/dist/components/divider/divider.js";
 import "./webawesome/dist/components/card/card.js";
 import "./webawesome/dist/components/avatar/avatar.js";
+import "./webawesome/dist/components/relative-time/relative-time.js";
 
 // Import HTMX
 import "./htmx.min.js"

@@ -1,0 +1,12 @@
+---<%
+filename = params[:tldr]
+user_ip = request.ip
+comments = params[:comments]
+
+Comments.insert(:filename => filename, :ip_address => user_ip, :comments => comments,
+                 created_at: Time.now)
+
+all_comments = Comments.where(filename: filename)
+%>---
+
+<%= render "comments", all_comments: all_comments %>
