@@ -36,7 +36,8 @@ layout: default
     <button hx-put="/comments/<%= resource.basename_without_ext %>"
       hx-include="#comments"
       hx-target="#tldr-comments"
-      hx-swap="outerHTML">
+      hx-swap="outerHTML"
+      hx-on::after-request="document.getElementById('comments').value = ''">
       Add Comment
     </button>
     <wa-divider></wa-divider>

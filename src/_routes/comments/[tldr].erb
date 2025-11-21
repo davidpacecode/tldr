@@ -9,4 +9,6 @@ Comments.insert(:filename => filename, :ip_address => user_ip, :comments => comm
 all_comments = Comments.where(filename: filename)
 %>---
 
-<%= render "comments", all_comments: all_comments %>
+<div id="tldr-comments">
+  <%= render "comments", all_comments: all_comments %>
+</div>
