@@ -1,5 +1,5 @@
 <ul class="wa-stack">
-  <% all_comments.each do |comment| %>
+  <% all_comments.sort_by { |c| c.created_at }.reverse.each do |comment| %>
     <li class="wa-stack wa-gap-2xs">
       <div class="wa-flank">
         <wa-avatar initials="AC" label="User avatar"></wa-avatar>

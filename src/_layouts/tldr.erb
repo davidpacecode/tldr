@@ -29,20 +29,20 @@ layout: default
 <div id="tldr-sentiment">
 </div>
 
-<wa-card style="max-width: 60ch; margin: auto">
-  <div class="wa-stack">
-    <h3 class="wa-heading-l">Comments</h3>
-    <wa-textarea aria-label="Comment" id="comments" name="comments"></wa-textarea>
-    <button hx-put="/comments/<%= resource.basename_without_ext %>"
-      hx-include="#comments"
-      hx-target="#tldr-comments"
-      hx-swap="outerHTML">
-      Add Comment
-    </button>
-    <wa-divider></wa-divider>
-    <div id="tldr-comments">
-      <%= render "comments", all_comments: Comments.where(filename: resource.basename_without_ext) %>
+  <wa-card style="max-width: 60ch; margin-right: auto;">
+    <div class="wa-stack">
+      <h3 class="wa-heading-l">Comments</h3>
+      <wa-textarea aria-label="Comment" id="comments" name="comments"></wa-textarea>
+      <button hx-put="/comments/<%= resource.basename_without_ext %>"
+        hx-include="#comments"
+        hx-target="#tldr-comments"
+        hx-swap="outerHTML"
+        hx-on::after-request="document.getElementById('comments').value = ''">
+        Add Comment
+      </button>
+      <wa-divider></wa-divider>
+      <div id="tldr-comments">
+        <%= render "comments", all_comments: Comments.where(filename: resource.basename_without_ext) %>
+      </div>
     </div>
-  </div>
-</wa-card>
-
+  </wa-card>
