@@ -6,19 +6,19 @@ layout: default
 
 <%= yield %>
 
-<button hx-put="/feedback/<%= resource.basename_without_ext %>"
+<wa-button variant="brand" hx-put="/feedback/<%= resource.basename_without_ext %>"
   hx-vals='{"vote_type": "upvote"}'
   hx-target="#tldr-sentiment"
   hx-swap="outerHTML">
   Upvote!
-</button>
+</wa-button>
 
-<button hx-put="/feedback/<%= resource.basename_without_ext %>"
+<wa-button variant="brand" hx-put="/feedback/<%= resource.basename_without_ext %>"
   hx-vals='{"vote_type": "downvote"}'
   hx-target="#tldr-sentiment"
   hx-swap="outerHTML">
   Downvote...
-</button>
+</wa-button>
 
 <br />
 <br />
@@ -33,13 +33,13 @@ layout: default
     <div class="wa-stack">
       <h3 class="wa-heading-l">Comments</h3>
       <wa-textarea aria-label="Comment" id="comments" name="comments"></wa-textarea>
-      <button hx-put="/comments/<%= resource.basename_without_ext %>"
+      <wa-button variant="brand" hx-put="/comments/<%= resource.basename_without_ext %>"
         hx-include="#comments"
         hx-target="#tldr-comments"
         hx-swap="outerHTML"
         hx-on::after-request="document.getElementById('comments').value = ''">
         Add Comment
-      </button>
+      </wa-button>
       <wa-divider></wa-divider>
       <div id="tldr-comments">
         <%= render "comments", all_comments: Comments.where(filename: resource.basename_without_ext) %>
