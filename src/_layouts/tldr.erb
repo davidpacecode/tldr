@@ -20,9 +20,11 @@ layout: default
   Downvote...
 </wa-button>
 
-<div class="wa-cluster">
-  <wa-button variant="brand" appearance="outlined"><wa-icon name="thumbs-up" label="thumbs-up"></wa-icon></wa-button>
-  <wa-button variant="brand" appearance="outlined"><wa-icon name="thumbs-down" label="thumbs-down"></wa-icon></wa-button>
+<!-- In your template/component (build time) -->
+<div hx-get="/votes/<%= resource.basename_without_ext %>" 
+     hx-trigger="load"
+     hx-swap="innerHTML">
+  <p>Loading votes...</p>
 </div>
 
 <br />
