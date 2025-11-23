@@ -1,0 +1,41 @@
+<div class="wa-cluster">
+  <wa-button
+    variant="brand"
+    appearance="<%= user_vote_type == "upvote" ? "accent" : "outlined" %>"
+    <%= "disabled" if user_vote_type == "upvote" %>
+    hx-put="/votes/<%= filename %>"
+    hx-vals='{"vote_type": "upvote"}'
+    hx-swap="outerHTML"
+    hx-target="closest .wa-cluster">
+    <wa-icon name="thumbs-up" label="thumbs-up"></wa-icon>
+  </wa-button>
+  <%= "+" if upvotes - downvotes > 0 %> <%= "#{upvotes - downvotes}" unless upvotes - downvotes == 0 %>
+  <wa-button
+    variant="brand"
+    appearance="<%= user_vote_type == "downvote" ? "accent" : "outlined" %>"
+    <%= "disabled" if user_vote_type == "downvote" %>
+    hx-put="/votes/<%= filename %>"
+    hx-vals='{"vote_type": "downvote"}'
+    hx-swap="outerHTML"
+    hx-target="closest .wa-cluster">
+    <wa-icon name="thumbs-down" label="thumbs-down"></wa-icon>
+  </wa-button>
+</div>
+
+<% if false %>
+<div class="wa-cluster"">
+  <%= upvotes %>
+  <i class="fa-notdog fa-solid fa-thumbs-up fa-2xl" style="color: #74C0FC;"></i>
+  <%= downvotes %>
+  <i class="fa-notdog fa-solid fa-thumbs-down fa-2xl" style="color: #f61404;"></i>
+  <%= "#{upvotes - downvotes}" %>
+  <i class="fa-jelly fa-regular fa-face-smile fa-2xl" style="color: #74C0FC;"></i>
+  <i class="fa-jelly fa-regular fa-face-frown fa-2xl" style="color: #f21202;"></i>
+</div>
+
+<%= "Filename = #{filename} ip_address = #{user_ip}" %>
+
+<%= "vote_type = #{vote_type}" %>
+
+<%= "where_output = #{where_output}" %>
+<% end %>
