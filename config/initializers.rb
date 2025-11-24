@@ -138,6 +138,9 @@ Bridgetown.configure do |config|
       permalink "simple"
       future true
     end
+    data do
+      output true
+    end
   end
 
   # trying to add bridgetown sequel and sqlite
