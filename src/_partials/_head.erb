@@ -1,9 +1,19 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<% resource_title = title ? strip_html(strip_newlines(title)) : nil %>
-<title><% if resource_title && resource_title != "Index" %><%= resource_title %> | <%= metadata.title %><% else %><%= metadata.title %>: <%= metadata.tagline %><% end %></title>
+<%
+  # Load metadata manually as workaround for SSR issue
+  require 'yaml'
+  metadata_path = File.join(site.source, '_data', 'site_metadata.yml')
+  loaded_metadata = File.exist?(metadata_path) ? YAML.load_file(metadata_path) : {}
+  site_title = loaded_metadata['title'] || metadata.title || 'tl;dr'
+  site_tagline = loaded_metadata['tagline'] || metadata.tagline || 'Quick summaries'
+  site_description = loaded_metadata['description'] || metadata.description || ''
 
-<meta name="description" content="<%= metadata.description %>" />
+  resource_title = title ? strip_html(strip_newlines(title)) : nil
+%>
+<title><% if resource_title && resource_title != "Index" %><%= resource_title %> | <%= site_title %><% else %><%= site_title %>: <%= site_tagline %><% end %></title>
+
+<meta name="description" content="<%= site_description %>" />
 
 <link rel="stylesheet" href="<%= asset_path :css %>" />
 <script src="<%= asset_path :js %>" defer></script>
