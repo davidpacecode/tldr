@@ -66,34 +66,34 @@ Bridgetown.configure do |config|
 
   # Uncomment to use Bridgetown SSR (aka dynamic rendering of content via Roda):
   #
-  init :ssr do
-    sessions true
-    setup -> site do
-      # Explicitly load site metadata in SSR mode
-      puts "\n" + "="*50
-      puts "SSR SETUP BLOCK IS RUNNING!"
-      puts "="*50
-      require 'yaml'
-      metadata_path = File.join(site.source, '_data', 'site_metadata.yml')
-      puts "Looking for metadata at: #{metadata_path}"
-      puts "File exists? #{File.exist?(metadata_path)}"
+  # init :ssr do
+  #   sessions true
+  #   setup -> site do
+  #     # Explicitly load site metadata in SSR mode
+  #     puts "\n" + "="*50
+  #     puts "SSR SETUP BLOCK IS RUNNING!"
+  #     puts "="*50
+  #     require 'yaml'
+  #     metadata_path = File.join(site.source, '_data', 'site_metadata.yml')
+  #     puts "Looking for metadata at: #{metadata_path}"
+  #     puts "File exists? #{File.exist?(metadata_path)}"
 
-      if File.exist?(metadata_path)
-        loaded_data = YAML.load_file(metadata_path)
-        puts "Loaded data from YAML: #{loaded_data.inspect}"
-        puts "site.metadata BEFORE merge: #{site.metadata.inspect}"
-        puts "site.metadata class: #{site.metadata.class}"
+  #     if File.exist?(metadata_path)
+  #       loaded_data = YAML.load_file(metadata_path)
+  #       puts "Loaded data from YAML: #{loaded_data.inspect}"
+  #       puts "site.metadata BEFORE merge: #{site.metadata.inspect}"
+  #       puts "site.metadata class: #{site.metadata.class}"
 
-        result = site.metadata.merge!(loaded_data)
+  #       result = site.metadata.merge!(loaded_data)
 
-        puts "site.metadata AFTER merge: #{site.metadata.inspect}"
-        puts "Merge result: #{result.inspect}"
-      else
-        puts "ERROR: site_metadata.yml file NOT FOUND!"
-      end
-      puts "="*50 + "\n"
-    end
-  end
+  #       puts "site.metadata AFTER merge: #{site.metadata.inspect}"
+  #       puts "Merge result: #{result.inspect}"
+  #     else
+  #       puts "ERROR: site_metadata.yml file NOT FOUND!"
+  #     end
+  #     puts "="*50 + "\n"
+  #   end
+  # end
   #
   # Add `sessions: true` if you need to use session data, flash, etc.
   #
@@ -137,9 +137,6 @@ Bridgetown.configure do |config|
       output true
       permalink "simple"
       future true
-    end
-    data do
-      output true
     end
   end
 
